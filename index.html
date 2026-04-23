@@ -295,7 +295,7 @@
        STATS
     ══════════════════════════════════════════ */
     .stats-wrap{border-bottom:1px solid var(--border);padding:5rem 2.5rem}
-    .stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+    .stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
     .stat{text-align:center}
     .stat-num{display:flex;align-items:baseline;justify-content:center;gap:.2rem;margin-bottom:.5rem}
     .stat-count{
@@ -402,7 +402,7 @@
        SERVICES
     ══════════════════════════════════════════ */
     #services{padding:8rem 2.5rem;max-width:1200px;margin:0 auto}
-    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:4rem}
+    .services-grid{display:grid;grid-template-columns:1fr;gap:1.25rem;margin-top:4rem;max-width:700px;margin-left:auto;margin-right:auto}
     .s-card{
       background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);
       padding:2.25rem 2rem 2rem;position:relative;overflow:hidden;
@@ -724,7 +724,7 @@
       .retainer-right{align-items:flex-start}
     }
     @media(min-width:681px) and (max-width:1024px){
-      .services-grid,.pricing-grid{grid-template-columns:1fr 1fr}
+      .pricing-grid{grid-template-columns:1fr 1fr}
       .who-grid,.meaning-grid{grid-template-columns:1fr 1fr}
     }
     @media(prefers-reduced-motion:reduce){
@@ -807,16 +807,13 @@
 <!-- MARQUEE -->
 <div class="mq-wrap">
   <div class="mq-track" aria-hidden="true">
-    <span class="mq-item">Zaya AI Agent</span><span class="mq-item">Content Automation</span>
-    <span class="mq-item">Business Dashboards</span><span class="mq-item">WhatsApp Integration</span>
+    <span class="mq-item">Zaya AI Agent</span><span class="mq-item">WhatsApp Integration</span>
+    <span class="mq-item">Lead Qualification</span><span class="mq-item">Inbox Automation</span>
     <span class="mq-item">AI Workflows</span><span class="mq-item">24/7 Autonomous Ops</span>
     <span class="mq-item">Live in 48 Hours</span><span class="mq-item">Custom AI Builds</span>
-    <span class="mq-item">Inbox Automation</span><span class="mq-item">Revenue Intelligence</span>
-    <span class="mq-item">Zaya AI Agent</span><span class="mq-item">Content Automation</span>
-    <span class="mq-item">Business Dashboards</span><span class="mq-item">WhatsApp Integration</span>
-    <span class="mq-item">AI Workflows</span><span class="mq-item">24/7 Autonomous Ops</span>
-    <span class="mq-item">Live in 48 Hours</span><span class="mq-item">Custom AI Builds</span>
-    <span class="mq-item">Inbox Automation</span><span class="mq-item">Revenue Intelligence</span>
+    <span class="mq-item">CRM Integration</span><span class="mq-item">Revenue Intelligence</span>
+    <span class="mq-item">Zaya AI Agent</span><span class="mq-item">WhatsApp Integration</span>
+    <span class="mq-item">Lead Qualification</span><span class="mq-item">Inbox Automation</span>
   </div>
 </div>
 
@@ -834,10 +831,6 @@
     <div class="stat reveal" data-delay=".2s">
       <div class="stat-num"><span class="stat-count" data-to="80">0</span><span class="stat-unit">%</span></div>
       <p class="stat-label">Average ops load reduction</p>
-    </div>
-    <div class="stat reveal" data-delay=".3s">
-      <div class="stat-num"><span class="stat-count" data-to="24">0</span><span class="stat-unit">/7</span></div>
-      <p class="stat-label">Your AI never clocks out</p>
     </div>
   </div>
 </div>
@@ -866,8 +859,7 @@
       <ul class="prob-list">
         <li>AI handles comms, follow-ups, and qualifications 24/7 — without you</li>
         <li>Every lead captured, nurtured, and tracked automatically</li>
-        <li>Content system runs on autopilot across every platform you use</li>
-        <li>Real-time dashboards give you clarity across your entire operation</li>
+        <li>Your AI works while you sleep — responses, follow-ups, bookings</li>
         <li>One unified stack — everything connected, everything working together</li>
         <li>You make decisions. The system does everything else.</li>
       </ul>
@@ -913,27 +905,14 @@
   <div class="reveal">
     <p class="sect-label">What We Build</p>
     <h2 class="sect-h2">AI that actually does things.</h2>
-    <p class="sect-sub">Three core products. Each one built to run a piece of your business on autopilot.</p>
+    <p class="sect-sub">One product. Built to run your business on autopilot — and a monthly team to keep it sharp.</p>
   </div>
   <div class="services-grid">
     <div class="s-card reveal" data-delay=".05s">
-      <span class="s-tag">Most Popular</span>
       <div class="s-icon">⚡</div>
       <h3 class="s-title">Zaya AI Agent</h3>
       <p class="s-desc">Your personal AI assistant — texts back, takes action, works 24/7. Built on the XIA architecture. Connects to WhatsApp, manages tasks, qualifies leads, and handles comms while you sleep. Not an off-the-shelf install — fully custom-built for your business.</p>
       <p class="s-price">from $2,500 · from $750/mo</p>
-    </div>
-    <div class="s-card reveal" data-delay=".15s">
-      <div class="s-icon">📡</div>
-      <h3 class="s-title">Content Systems</h3>
-      <p class="s-desc">A fully automated content workflow across every platform. Brief it once — it creates, schedules, repurposes, and publishes. Built around how you actually work, not a rigid template.</p>
-      <p class="s-price">Book a call for pricing</p>
-    </div>
-    <div class="s-card reveal" data-delay=".25s">
-      <div class="s-icon">📊</div>
-      <h3 class="s-title">Business Dashboards</h3>
-      <p class="s-desc">Real-time visibility across your entire operation. Team performance, revenue, sessions, KPIs — one screen, always current. Built custom for your business, not a template.</p>
-      <p class="s-price">Book a call for pricing</p>
     </div>
   </div>
 </section>
@@ -965,7 +944,6 @@
       <p class="price-desc">For growing teams who need multiple systems working together — a connected stack, not a patchwork of tools.</p>
       <ul class="price-features">
         <li>Two to three integrated AI systems</li>
-        <li>Zaya AI Agent + content or dashboard</li>
         <li>Full CRM and tools integration</li>
         <li>Custom automations across your ops</li>
         <li>60-day post-launch support</li>
@@ -979,7 +957,7 @@
       <p class="price-desc">For operators who want the complete XIA architecture across their entire business — every system, fully integrated.</p>
       <ul class="price-features">
         <li>Complete XIA systems suite</li>
-        <li>All three core products + custom builds</li>
+        <li>Custom builds across your full operation</li>
         <li>Deep integrations across your full stack</li>
         <li>Dedicated build team</li>
         <li>90-day post-launch support</li>
@@ -1436,7 +1414,7 @@ const cntObs = new IntersectionObserver(entries => {
     })(t0);
     cntObs.unobserve(el);
   });
-}, { threshold: .6 });
+}, { threshold: .15 });
 document.querySelectorAll('.stat-count').forEach(el => cntObs.observe(el));
 
 /* ═══════════════════════════════════════════════════════════
