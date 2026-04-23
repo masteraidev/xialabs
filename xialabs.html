@@ -644,22 +644,55 @@
        SCROLL REVEAL
     ══════════════════════════════════════════ */
     .reveal{opacity:0;transform:translateY(40px) perspective(700px) rotateX(4deg);transform-origin:center top}
-    .reveal.in{opacity:1;transform:translateY(0) perspective(700px) rotateX(0deg);transition:opacity .9s var(--spring),transform .9s var(--spring)}
-
-    /* Mobile: all sections visible immediately — no JS gatekeeping */
-    @media(max-width:680px){
-      .reveal{opacity:1;transform:none}
-      body{overflow-y:scroll!important}
-      .stats-wrap,.problem-grid,#zaya,#services,#proof,.compare-wrap,.entropy-wrap,#how,#faq,#qualify,#who,[class*="meaning"]{padding-top:3rem;padding-bottom:3rem}
-    }
     @media(min-width:681px){
       .reveal{opacity:0;transform:translateY(40px) perspective(700px) rotateX(4deg);transform-origin:center top}
       .reveal.in{opacity:1;transform:translateY(0) perspective(700px) rotateX(0deg);transition:opacity .9s var(--spring),transform .9s var(--spring)}
     }
 
-    /* ══════════════════════════════════════════
-       RESPONSIVE
-    ══════════════════════════════════════════ */
+    /* MOBILE NAV */
+    .nav-drawer{
+      display:none;position:fixed;inset:0;z-index:900;
+      background:rgba(5,5,7,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+      flex-direction:column;align-items:center;justify-content:center;gap:2rem;
+      opacity:0;pointer-events:none;transition:opacity .3s;
+    }
+    .nav-drawer.open{display:flex;opacity:1;pointer-events:all}
+    .nav-drawer a{font-size:1.5rem;font-weight:500;color:var(--text);text-decoration:none;letter-spacing:-.02em;transition:color .2s}
+    .nav-drawer a:hover{color:var(--accent)}
+    .nav-drawer .drawer-close{position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:var(--text-2);font-size:2rem;cursor:pointer;line-height:1;padding:.5rem}
+    .nav-drawer .drawer-cta{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:#000;font-weight:600;font-size:.875rem;padding:.75rem 1.5rem;border-radius:9px;text-decoration:none;margin-top:1rem}
+
+    /* MOBILE (≤680px) */
+    @media(max-width:680px){
+      #hero{min-height:unset;padding-top:5rem;padding-bottom:3rem}
+      .hero-content{padding-top:5rem}
+      .hero-h1{font-size:2.4rem}
+      .hero-sub{font-size:.9rem}
+      .reveal{opacity:1!important;transform:none!important}
+      .stats-wrap{padding:3rem 1.5rem}
+      .stats-inner{grid-template-columns:repeat(2,1fr);gap:1.5rem}
+      #zaya{min-height:unset;padding:3rem 1.5rem}
+      .spotlight-card{padding:1.5rem}
+      .mq-wrap{padding:1rem 0}
+      section:not(#hero){padding:4rem 1.5rem!important}
+      .compare-wrap,.entropy-wrap,.steps-wrap,.proof-wrap,.zaya-wrap,.services-wrap,.problem-wrap,.pricing-wrap,.footer-wrap{background:var(--bg)!important}
+      .sc-left{padding:2rem 1.5rem}
+      .entropy-inner{padding:3rem 1.5rem;grid-template-columns:1fr;gap:2rem}
+      .steps-grid,.prob-grid,.services-grid,.proof-grid,.pricing-grid,.who-grid,.meaning-grid{grid-template-columns:1fr}
+      #cta .cta-box{padding:3rem 1.5rem}
+      .cta-h2{font-size:2rem}
+      .compare-inner{padding:3rem 1.5rem}
+      .compare-table{overflow-x:auto;-webkit-overflow-scrolling:touch}
+      .ct-row{min-width:500px}
+      .faq-item{margin-bottom:.5rem}
+      #mob-cta{display:flex}
+      .footer-wrap{padding:2rem 1.5rem;flex-direction:column;text-align:center}
+      .footer-links{justify-content:center}
+      nav .nav-links{display:none}
+      nav .nav-ham{display:flex}
+    }
+
+    /* TABLET (≤900px) */
     @media(max-width:900px){
       .services-grid,.steps-grid,.who-grid,.meaning-grid{grid-template-columns:1fr}
       .spotlight-card{grid-template-columns:1fr}
@@ -673,39 +706,9 @@
       .retainer-card{flex-direction:column}
       .retainer-right{align-items:flex-start}
     }
-    @media(min-width:901px) and (max-width:1024px){
+    @media(min-width:681px) and (max-width:1024px){
       .services-grid,.pricing-grid{grid-template-columns:1fr 1fr}
       .who-grid,.meaning-grid{grid-template-columns:1fr 1fr}
-    }
-    @media(max-width:680px){
-      nav{padding:0 1.25rem}
-      .nav-links{display:none}
-      .nav-ham{display:flex}
-      .hero-h1{font-size:2.8rem}
-      .reveal{opacity:1!important;transform:none!important}
-      .reveal::before{display:none}
-      section,.compare-wrap,.entropy-wrap,.steps-wrap,.proof-wrap,.zaya-wrap,.services-wrap,.problem-wrap,.pricing-wrap,.footer-wrap{background:var(--bg)!important}
-      .sc-left{padding:2.5rem 2rem}
-      .entropy-inner{padding:3.5rem 1.5rem;grid-template-columns:1fr;gap:2.5rem}
-      .steps-grid{grid-template-columns:1fr;gap:2.5rem}
-      .prob-grid{grid-template-columns:1fr}
-      .price-grid{grid-template-columns:1fr}
-      .services-grid{grid-template-columns:1fr}
-      .proof-grid{grid-template-columns:1fr}
-      .stats-inner{grid-template-columns:repeat(2,1fr)}
-      .sect,#zaya,#services,#proof,#problem,#pricing,#faq,#qualify{padding-left:1.5rem;padding-right:1.5rem}
-      #cta{padding-left:1.5rem;padding-right:1.5rem}
-      .cta-box{padding:3.5rem 1.5rem}
-      .sc-left{padding:2.5rem 2rem}
-      .entropy-inner{padding:3.5rem 1.5rem}
-      .stats-wrap{padding:3.5rem 1.5rem}
-      .stats-inner{grid-template-columns:repeat(2,1fr)}
-      .footer-wrap{padding:2rem 1.5rem;flex-direction:column;text-align:center}
-      .footer-links{justify-content:center}
-      #mob-cta{display:block}
-      .compare-inner{padding-left:1.5rem;padding-right:1.5rem}
-      .prob-col,.q-col{padding:1.875rem 1.5rem}
-      .retainer-card{padding:1.75rem 1.5rem}
     }
     @media(prefers-reduced-motion:reduce){
       *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
@@ -741,8 +744,19 @@
     <li><a href="mailto:hello@xialabs.ai">Contact</a></li>
     <li><a href="https://calendly.com/xialabs" class="btn-nav">Book a Call</a></li>
   </ul>
-  <div class="nav-ham" aria-label="Menu"><span></span><span></span><span></span></div>
+  <div class="nav-ham" id="nav-ham" aria-label="Menu"><span></span><span></span><span></span></div>
 </nav>
+
+<!-- MOBILE DRAWER -->
+<div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+  <button class="drawer-close" id="drawer-close" aria-label="Close menu">✕</button>
+  <a href="#services">Services</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#how">Process</a>
+  <a href="#faq">FAQ</a>
+  <a href="mailto:hello@xialabs.ai">Contact</a>
+  <a href="https://calendly.com/xialabs" class="drawer-cta">Book a Call →</a>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -1246,6 +1260,27 @@ const lenis = new Lenis({
 const navbar = document.getElementById('navbar');
 const heroContent = document.getElementById('hero-content');
 const heroGlow    = document.getElementById('hero-glow');
+
+/* MOBILE HAMBURGER MENU */
+const drawer = document.getElementById('nav-drawer');
+const ham    = document.getElementById('nav-ham');
+const closeBtn = document.getElementById('drawer-close');
+if (ham && drawer) {
+  ham.addEventListener('click', () => {
+    drawer.classList.toggle('open');
+    document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
+  });
+  if (closeBtn) closeBtn.addEventListener('click', () => {
+    drawer.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      drawer.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+}
 
 lenis.on('scroll', ({ scroll, limit }) => {
   lenisScroll = scroll;
