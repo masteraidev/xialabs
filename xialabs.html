@@ -307,7 +307,7 @@
     /* ══════════════════════════════════════════
        SHARED SECTIONS
     ══════════════════════════════════════════ */
-    .sect{padding:8rem 2.5rem;max-width:1200px;margin:0 auto}
+    .sect{padding:8rem 2.5rem;max-width:1200px;margin:0 auto;background:var(--bg)}
     .sect-label{font-size:.7rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.875rem;font-family:'Space+Grotesk',monospace}
     .sect-h2{font-family:'Sora',sans-serif;font-size:clamp(1.85rem,3.5vw,3rem);font-weight:600;letter-spacing:-.04em;line-height:1.12;margin-bottom:.875rem}
     .sect-sub{font-size:.9375rem;color:var(--text-2);max-width:500px;line-height:1.8}
@@ -490,9 +490,9 @@
     /* ══════════════════════════════════════════
        COMPARISON TABLE
     ══════════════════════════════════════════ */
-    .compare-wrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .compare-wrap{background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
     .compare-inner{padding:8rem 2.5rem;max-width:1200px;margin:0 auto}
-    .compare-table{margin-top:4rem;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border)}
+    .compare-table{margin-top:4rem;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);background:var(--surface)}
     .ct-row{display:grid;grid-template-columns:2fr 2fr 2fr;border-bottom:1px solid var(--border)}
     .ct-row:last-child{border-bottom:none}
     .ct-row.ct-header{background:var(--surface-2)}
@@ -507,7 +507,7 @@
     /* ══════════════════════════════════════════
        ENTROPY
     ══════════════════════════════════════════ */
-    .entropy-wrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .entropy-wrap{background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
     .entropy-inner{max-width:1200px;margin:0 auto;padding:7rem 2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
     .entropy-labels{display:flex;gap:2rem;margin-top:2rem;font-size:.7rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase}
     .el-order{color:var(--accent)}
@@ -646,6 +646,17 @@
     .reveal{opacity:0;transform:translateY(40px) perspective(700px) rotateX(4deg);transform-origin:center top}
     .reveal.in{opacity:1;transform:translateY(0) perspective(700px) rotateX(0deg);transition:opacity .9s var(--spring),transform .9s var(--spring)}
 
+    /* Mobile: all sections visible immediately — no JS gatekeeping */
+    @media(max-width:680px){
+      .reveal{opacity:1;transform:none}
+      body{overflow-y:scroll!important}
+      .stats-wrap,.problem-grid,#zaya,#services,#proof,.compare-wrap,.entropy-wrap,#how,#faq,#qualify,#who,[class*="meaning"]{padding-top:3rem;padding-bottom:3rem}
+    }
+    @media(min-width:681px){
+      .reveal{opacity:0;transform:translateY(40px) perspective(700px) rotateX(4deg);transform-origin:center top}
+      .reveal.in{opacity:1;transform:translateY(0) perspective(700px) rotateX(0deg);transition:opacity .9s var(--spring),transform .9s var(--spring)}
+    }
+
     /* ══════════════════════════════════════════
        RESPONSIVE
     ══════════════════════════════════════════ */
@@ -671,6 +682,17 @@
       .nav-links{display:none}
       .nav-ham{display:flex}
       .hero-h1{font-size:2.8rem}
+      .reveal{opacity:1!important;transform:none!important}
+      .reveal::before{display:none}
+      section,.compare-wrap,.entropy-wrap,.steps-wrap,.proof-wrap,.zaya-wrap,.services-wrap,.problem-wrap,.pricing-wrap,.footer-wrap{background:var(--bg)!important}
+      .sc-left{padding:2.5rem 2rem}
+      .entropy-inner{padding:3.5rem 1.5rem;grid-template-columns:1fr;gap:2.5rem}
+      .steps-grid{grid-template-columns:1fr;gap:2.5rem}
+      .prob-grid{grid-template-columns:1fr}
+      .price-grid{grid-template-columns:1fr}
+      .services-grid{grid-template-columns:1fr}
+      .proof-grid{grid-template-columns:1fr}
+      .stats-inner{grid-template-columns:repeat(2,1fr)}
       .sect,#zaya,#services,#proof,#problem,#pricing,#faq,#qualify{padding-left:1.5rem;padding-right:1.5rem}
       #cta{padding-left:1.5rem;padding-right:1.5rem}
       .cta-box{padding:3.5rem 1.5rem}
